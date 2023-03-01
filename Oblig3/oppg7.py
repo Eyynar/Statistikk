@@ -3,7 +3,7 @@ from scipy import stats as stats
 from matplotlib import pyplot as plt
 
 val = float(input("Skriv inn ønsket λt: \n"))
-l = int(input("Skriv inn øve grense: \n"))
+l = int(input("Skriv inn øvre grense: \n"))
 
 x = np.arange(0, l+1, 1)
 p1 = stats.poisson.pmf(x, mu=val)
