@@ -17,8 +17,6 @@ if n * p_hatt * (1 - p_hatt) < 5:
     exit()
 
 else:
-
-    z = stats.norm.ppf((alfa_2))
+    z = abs(stats.norm.ppf((alfa_2)))
     differanse = z * math.sqrt((p_hatt * (1 - p_hatt)) / n)
-
     print(f"Følgende er et {KI_prosent}% KI for tallene du tastet inn: \n[{p_hatt - differanse}, {p_hatt + differanse}]")
