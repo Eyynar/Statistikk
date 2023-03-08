@@ -3,37 +3,26 @@ import random as rand
 from matplotlib import pyplot as plt
 import numpy as np
 
-i = int(input("Skriv in ønsket antall omganger: "))
-j = int(input("Skriv in ønsket antall kast pr omgang: "))
+n = int(input("Skriv in ønsket antall omganger: "))
+k = int(input("Skriv in ønsket antall kast pr omgang: "))
 results = []
 avg_results = []
 sum_of_avg = 0
-diff = []
-for x in range(i):
+S2_sum = 0
+
+for omgang in range(n):
     result = 0
-    for y in range(j):
+    for kast in range(k):
         result += rand.randint(1,6)
 
     results.append(result)
-    avg_results.append(result / j)
-    diff.append(math.pow(result, 2) - math.pow((result / j), 2))
+    avg_results.append(result / k)
 
-total_avg = (sum(avg_results) / i)
+total_avg = np.mean(avg_results)
 
-var = (sum(diff) / (i - 1))
-sd = math.sqrt(var)
+utvalgsstandardavvik = np.std(avg_results)
 
-print(results)
-print(avg_results)
+print("Resultater: ", results)
+print("Gjennomsnitt pr omgang: ", avg_results)
 print("Gjennomsnittet av hele utvalget: ", total_avg)
-print(diff)
-print("Utvalgsvarians: ", var)
-print("Utvalgsstandardavvik: ", sd)
-
-
-#print(results, "\n", avg_results)
-
-# Fikse antall bins - 30 stk
-#bin_range = np.arange(min(avg_results), max(avg_results) + 0.05, 0.05)
-#plt.hist(avg_results, bins=bin_range)
-#plt.show()
+print("Utvalgsstandardavvik: ", utvalgsstandardavvik)

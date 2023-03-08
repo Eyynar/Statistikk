@@ -18,7 +18,5 @@ for x in range(i):
 
 #print(results, "\n", avg_results)
 
-# Fikse antall bins - 30 stk
-bin_range = np.arange(min(avg_results), max(avg_results) + 0.05, 0.05)
-plt.hist(avg_results, bins=bin_range)
+plt.hist(avg_results, bins=30, edgecolor="black", linewidth=0.5)
 plt.show()
