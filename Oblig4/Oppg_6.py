@@ -14,7 +14,6 @@ nedre_grense = math.sqrt((dof * s2) / chi1)
 
 chi2 = stats.chi2.ppf((alfa / 2), dof)
 ovre_grense = math.sqrt((dof * s2) / chi2)
-print(n, s2)
 
 print(f"Punktestimat for standardavvik: {np.std(data, ddof=1)}")
 print(f"konfidensintervall: [{nedre_grense}, {ovre_grense}]")
