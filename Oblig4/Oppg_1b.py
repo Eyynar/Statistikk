@@ -16,7 +16,5 @@ for x in range(i):
     results.append(result)
     avg_results.append(result/j)
 
-#print(results, "\n", avg_results)
-
 plt.hist(avg_results, bins=30, edgecolor="black", linewidth=0.5)
 plt.show()

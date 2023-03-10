@@ -16,9 +16,9 @@ for i in range(len(measurements)):
 np_weight = np.array(weight)
 np_h_weight = np.array(h_weight)
 
-qqplot(np_weight, fit=True, line="s")
+qqplot(np_weight, fit=True, line="s").suptitle("Kattenes vekt")
 plt.show()
 
-qqplot(np_h_weight, fit=True, line="s")
+qqplot(np_h_weight, fit=True, line="s").suptitle("Hjertenes vekt")
 plt.show()
 
