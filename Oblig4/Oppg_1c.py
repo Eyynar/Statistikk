@@ -22,7 +22,8 @@ total_avg = np.mean(avg_results)
 
 utvalgsstandardavvik = np.std(avg_results)
 
-print("Resultater: ", results)
-print("Gjennomsnitt pr omgang: ", avg_results)
+#print("Resultater: ", results)
+#print("Gjennomsnitt pr omgang: ", avg_results)
 print("Gjennomsnittet av hele utvalget: ", total_avg)
 print("Utvalgsstandardavvik: ", utvalgsstandardavvik)
+print(f"Faktisk standardavvik: {1.71 / math.sqrt(k)}")
