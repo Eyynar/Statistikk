@@ -1,2 +1,16 @@
 from scipy import stats
+import pandas as pd
 
+measurements = pd.read_csv('katters_vekt.csv', quotechar=',', skipinitialspace=True).values
+
+weights = []
+for row in measurements:
+    weights.append(row[1])
+
+print(weights)
+alfa = float(input("Skriv inn ønsket signifikansnivå: "))
+my_0 = float(input("Skriv inn forventningsverdi: "))
+
+t_statistic, p_value = stats.ttest_1samp(a=weights, popmean=my_0)
+
+print(t_statistic, p_value)
