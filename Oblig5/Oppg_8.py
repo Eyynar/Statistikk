@@ -36,20 +36,28 @@ n = len(b_weights)
 dof = n - 2
 x_mean = np.mean(b_weights)
 
+# Finner Error sum of squares
 SS_E = 0
 for row in measurements:
     SS_E += math.pow((row[2] - reg_line.intercept - beta_hat * row[1]), 2)
 
+# Finner varians og standardavvik
 s2 = SS_E / dof
 s = math.sqrt(s2)
 
+# Regner ut forventet hjertevekt ved å sette inn x i ligningen
 expected_h_weight = reg_line.intercept + beta_hat * x
+
+#Finner t-kvantil
 t_statistic = stats.t.ppf(1 - alpha / 2, dof)
+
+# Finner konfidensintervallets grenser
 ci_limit = t_statistic * s * math.sqrt((1/n) + math.pow(((x - x_mean) / (s / stderr)), 2))
 
 print(f"Konfidensintervallet for hjertevekt når kroppsvekten er {x} er: {round(expected_h_weight, 1)} +- { round(ci_limit, 1)}")
 
 # e)
+# Finner prediksjonsintervallets grenser
 pi_limit = t_statistic * s * math.sqrt(1 + (1/n) + math.pow(((x - x_mean) / (s / stderr)), 2))
 
 print(f"Prediksjonsintervallet for hjertevekt når kroppsvekten er {x} er: {round(expected_h_weight, 1)} +- {round(pi_limit, 1)}")
