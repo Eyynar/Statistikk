@@ -12,4 +12,4 @@ for row in measurements:
 
 r = stats.pearsonr(b_weights, h_weights)
 
-print(f"Korrelasjonskoeffisienten mellom datasettene er: {r[0]}")
+print(f"Korrelasjonskoeffisienten mellom datasettene er: {round(r[0], 3)}")

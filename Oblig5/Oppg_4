@@ -15,10 +15,10 @@ t_statistic, p_value = stats.ttest_1samp(a=weights, popmean=my_0, alternative="g
 dof = len(weights) - 1
 t_quantile = stats.t.ppf(1-alfa, dof)
 
-print(f"P-verdi: {p_value}")
-
 if t_statistic >= t_quantile:
     print(f"Siden t={round(t_statistic, 3)} >= t_alfa, v={round(t_quantile, 3)} forkaster vi H0 på signifikansnivå alfa={alfa}")
 
 else:
     print(f"Siden t={t_statistic} < t_alfa, v={t_quantile} forkaster vi ikke H0 på signifikansnivå alfa={alfa}")
+
+print(f"P-verdi: {round(p_value, 4)}")
