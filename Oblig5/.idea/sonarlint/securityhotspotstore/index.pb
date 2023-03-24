@@ -1,14 +1,3 @@
 
 @
 katters_vekt.csv,4\a\4aeb5f8d01a3c09506dd773bf337fc8410f878eb
-9
-	Oppg_2.py,d\e\de6a35192a24b3a536551d329c509dec32312dec
-6
-Oppg_4,0\4\0425ec4683c5deaae336072d7cda0773206e46ce
-9
-	Oppg_6.py,2\c\2c13df91cad41b03a118ba991c5b3d006a9468c6
-:
-
-Oppg_7e.py,9\3\9318bca0e17506d13f6f92b83df4218cb5236ba6
-9
-	Oppg_8.py,6\2\62c00c5669e88f87d6ed40e38b1888d01e542e15
