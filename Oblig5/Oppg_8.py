@@ -4,22 +4,25 @@ import pandas as pd
 import numpy as np
 import math
 
+# Leser inn data fra csv-filen
 measurements = pd.read_csv('katters_vekt.csv', quotechar=',', skipinitialspace=True).values
 
+# Legger kroppsvekt og hjertevekt i egne lister
 b_weights = []
 h_weights = []
-
 for row in measurements:
     b_weights.append(row[1])
     h_weights.append(row[2])
 
 # a)
+# Lager scatterplot
 plt.scatter(b_weights, h_weights)
 plt.xlabel("Kroppsvekt (kg)")
 plt.ylabel("Hjertevekt (g)")
 plt.show()
 
 # b)
+# Finner regresjonslinjen, beta_hatt og standardfeilen til beta_hatt
 reg_line = stats.linregress(b_weights, h_weights)
 beta_hat = reg_line.slope
 stderr = reg_line.stderr
@@ -28,6 +31,7 @@ print(f"Ligningen for linjen: y={round(reg_line.intercept, 4)}+{round(beta_hat, 
 print(f"Standardfeilen for estimatoren β er {round(stderr, 4)}")
 
 # d)
+# Tar inn en vekt fra brukeren
 x = float(input("Skriv inn en vekt(i kg): "))
 
 # Regner ut alfa, n, antall frihetsgrader og middelvedi av b_weights
@@ -48,7 +52,7 @@ s = math.sqrt(s2)
 # Regner ut forventet hjertevekt ved å sette inn x i ligningen
 expected_h_weight = reg_line.intercept + beta_hat * x
 
-#Finner t-kvantil
+# Finner t-kvantil
 t_statistic = stats.t.ppf(1 - alpha / 2, dof)
 
 # Finner konfidensintervallets grenser
