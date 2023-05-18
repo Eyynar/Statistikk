@@ -1,6 +1,4 @@
 
-@
-katters_vekt.csv,4\a\4aeb5f8d01a3c09506dd773bf337fc8410f878eb
 :
 
 Oppg_7e.py,9\3\9318bca0e17506d13f6f92b83df4218cb5236ba6
@@ -12,3 +10,7 @@ Oppg_7e.py,9\3\9318bca0e17506d13f6f92b83df4218cb5236ba6
 	Oppg_6.py,2\c\2c13df91cad41b03a118ba991c5b3d006a9468c6
 9
 	Oppg_4.py,6\8\6844271b456fd3696f066647fcb5c4bc1b90c843
+@
+katters_vekt.csv,4\a\4aeb5f8d01a3c09506dd773bf337fc8410f878eb
+6
+tst.py,5\3\539f0cdd034cafa7d6223cde55f99e2616bf5dae
